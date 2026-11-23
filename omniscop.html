@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Project Scope: Omnichannel AI CRM</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='227 267 154 154'%3E%3Cdefs%3E%3ClinearGradient id='wineGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E61C53'/%3E%3Cstop offset='100%25' stop-color='%237B0323'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23wineGrad)'%3E%3Cpath d='M329.24,358.88l-22.57,22.61c-7.85,7.86-20.58,7.86-28.44,0.02l-23.01-22.98c-7.86-7.85-7.87-20.58-0.02-28.44l22.98-23.01c7.85-7.86,20.58-7.87,28.44-0.02l22.5,22.47c5.16,5.16,13.53,5.15,18.69-0.01s5.15-13.53-0.01-18.69l-20.6-20.57c-6.42-6.41-16.81-6.4-23.21,0.01c-6.41,6.42-16.79,6.43-23.21,0.02c-3.21-3.2-7.4-4.8-11.6-4.8c-4.2,0-8.39,1.61-11.6,4.82l-19.18,19.21c-6.41,6.42-6.4,16.81,0.01,23.21c3.21,3.2,4.81,7.4,4.82,11.6c0,4.2-1.6,8.4-4.8,11.6c-3.2,3.2-4.8,7.41-4.79,11.61c0,4.2,1.61,8.39,4.82,11.6l19.21,19.18c6.42,6.41,16.8,6.39,23.2-0.02c3.2-3.21,7.4-4.81,11.61-4.81c4.2,0,8.4,1.6,11.6,4.8c3.2,3.2,7.41,4.8,11.6,4.8c4.21-0.01,8.4-1.62,11.61-4.83l20.68-20.7c5.16-5.16,5.15-13.53-0.01-18.69C342.77,353.71,334.4,353.72,329.24,358.88z'/%3E%3Cpath d='M375.84,342.88c-5.61-3.07-10.22-7.68-13.29-13.29l-1.4-2.57l-1.4,2.57c-3.07,5.61-7.68,10.22-13.29,13.29l-2.57,1.4l2.57,1.4c5.61,3.07,10.22,7.68,13.29,13.29l1.4,2.57l1.4-2.57c3.07-5.61,7.68-10.22,13.29-13.29l2.57-1.4L375.84,342.88z'/%3E%3Cpath d='M294.1,329.59l-1.4-2.57l-1.4,2.57c-3.07,5.61-7.68,10.22-13.29,13.29l-2.57,1.4l2.57,1.4c5.61,3.07,10.22,7.68,13.29,13.29l1.4,2.57l1.4-2.57c3.07-5.61,7.68-10.22,13.29-13.29l2.57-1.4l-2.57-1.4C301.78,339.81,297.17,335.2,294.1,329.59z'/%3E%3C/g%3E%3C/svg%3E">
+    
+    <style>
+        :root {
+            /* BRAND THEME: Deep Wine & Corporate Slate */
+            --primary: #590d22;
+            --primary-dark: #2b061e;
+            --primary-light: #800f2f;
+            --secondary: #4a4e69;
+            --accent: #9d0208;
+            --bg-body: #f4f6f8;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --border-light: #edf2f7;
+            
+            /* Status / Semantic Colors */
+            --success: #0f766e;
+            --success-bg: #ccfbf1;
+            --warning: #b45309;
+            --warning-bg: #fef3c7;
+            --info: #1d4ed8;
+            --info-bg: #dbeafe;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.6rem; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 6px; }
+        
+        .section-header {
+            margin-top: 55px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .section-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            background: #f1f5f9;
+            color: var(--secondary);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .section-lead {
+            font-size: 1.05rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        h3 { font-size: 1.2rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        h4 { font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+
+        /* --- EXECUTIVE COVER BANNER --- */
+        .cover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 50px 45px;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(43, 6, 30, 0.2);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 35px;
+        }
+        
+        .cover::after {
+            content: "";
+            position: absolute;
+            top: -50%; right: -20%; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .brand-badge {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .cover .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        /* --- KPI STATS STRIP --- */
+        .kpi-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 16px 20px;
+        }
+
+        .kpi-item {
+            text-align: left;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            padding-right: 15px;
+        }
+        .kpi-item:last-child { border-right: none; }
+
+        .kpi-num {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #ffffff;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .kpi-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        /* --- CARDS & GRIDS --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+            position: relative;
+        }
+
+        .card-accent {
+            border-top: 4px solid var(--primary);
+        }
+
+        /* --- INFOGRAPHIC FLOWCHART (ARCHITECTURE) --- */
+        .infographic-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 25px;
+        }
+
+        .flow-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 14px;
+            align-items: stretch;
+        }
+
+        .flow-node {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .flow-node.primary {
+            background: linear-gradient(135deg, #590d22, #3e0717);
+            color: white;
+            border-color: #2b061e;
+        }
+        .flow-node.primary h4, .flow-node.primary p { color: white !important; }
+
+        .flow-node.ai {
+            background: #fdf2f8;
+            border: 1.5px dashed var(--accent);
+        }
+
+        .flow-node h4 {
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+            font-weight: 700;
+        }
+
+        .flow-node p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .flow-connector {
+            text-align: center;
+            color: var(--primary-light);
+            font-weight: 800;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* --- VISUAL PILLS & BADGES --- */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-core { background: #fee2e2; color: #991b1b; }
+        .badge-ai { background: #fce7f3; color: #9d174d; }
+        .badge-marketing { background: #e0e7ff; color: #3730a3; }
+        .badge-infra { background: #ecfdf5; color: #065f46; }
+
+        .tech-pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tech-pill {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        /* --- VISUAL ROADMAP (GANTT BARS) --- */
+        .roadmap-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 15px;
+        }
+
+        .phase-block {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .phase-sidebar {
+            background: var(--primary-dark);
+            color: #ffffff;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .phase-sidebar .phase-num {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            font-weight: 700;
+        }
+
+        .phase-sidebar .phase-months {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #ffb4c2;
+        }
+
+        .phase-content {
+            padding: 16px 20px;
+        }
+
+        .phase-content h4 {
+            font-size: 0.95rem;
+            color: var(--primary);
+            text-transform: none;
+            margin-bottom: 6px;
+        }
+
+        .phase-progress-bar {
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .phase-fill {
+            height: 100%;
+            background: var(--primary-light);
+            border-radius: 3px;
+        }
+
+        /* --- BUDGET CHARTS & TABLES --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        tr:nth-child(even) { background-color: #f8fafc; }
+        
+        .cost-table th { background-color: var(--primary-dark); }
+        .cost-table .total-row td { 
+            font-weight: bold; 
+            background-color: var(--primary-dark); 
+            color: white; 
+            font-size: 1rem;
+        }
+
+        .budget-visual-bar {
+            display: flex;
+            height: 24px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 15px 0 25px 0;
+            border: 1px solid var(--border);
+        }
+
+        .b-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* --- CALLOUTS --- */
+        .callout {
+            padding: 16px 20px;
+            border-left: 4px solid var(--accent);
+            background: #fff5f5;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            border-top: 1px solid #fee2e2;
+            bo4. Technology Stack & Infrastructure
+rder-right: 1px solid #fee2e2;
+            border-bottom: 1px solid #fee2e2;
+        }
+        .callout-title { font-weight: 700; color: var(--accent); font-size: 0.85rem; margin-bottom: 4px; text-transform: uppercase; }
+
+        /* --- UTILITY & LISTS --- */
+        .text-sm { font-size: 0.85rem; }
+        .text-muted { color: var(--text-muted); }
+        ul { list-style: none; padding-left: 0; }
+        ul li { position: relative; padding-left: 18px; margin-bottom: 8px; font-size: 0.9rem; }
+        ul li::before { content: "▪"; color: var(--primary); position: absolute; left: 0; font-size: 1.1em; top: -1px; }
+        
+        ul.sub-list { margin-top: 6px; margin-left: 10px; }
+        ul.sub-list li::before { content: "–"; color: var(--secondary); }
+
+        @media (max-width: 768px) {
+            .grid, .grid-3 { grid-template-columns: 1fr; }
+            .kpi-strip { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .phase-block { grid-template-columns: 1fr; }
+        }
+
+        @media print {
+            body { background: white; -webkit-print-color-adjust: exact; }
+            .container { max-width: 100%; padding: 0; }
+            .cover { background: var(--primary) !important; color: white !important; }
+            .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER / EXECUTIVE BANNER -->
+    <header class="cover">
+        <span class="brand-badge">Creativ Plus</span>
+        <h1 style="color: white;">Omnichannel AI CRM</h1>
+        <div class="subtitle">Intelligent Omni Conversations → Conversion</div>
+        
+        <div class="kpi-strip">
+            <div class="kpi-item">
+                <span class="kpi-num">1 Quarter</span>
+                <span class="kpi-label">Launch Timeline</span>
+            </div>
+            <div class="kpi-item">
+                <span class="kpi-num">Resources</span>
+                <span class="kpi-label">Team, Infra, Security & APIs </span>
+            </div>
+            <div class="kpi-item">
+                <span class="kpi-num">Implementation</span>
+                <span class="kpi-label">Execution Roadmap</span>
+            </div>
+            <div class="kpi-item">
+                <span class="kpi-num">4 Channels</span>
+                <span class="kpi-label">Voice, WA, IG, Ads</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: EXECUTIVE VISION -->
+    <section>
+        <div class="section-header">
+            <h2><span>🎯</span> 1. Executive Summary & Core Vision</h2>
+            <span class="section-tag">Strategic Alignment</span>
+        </div>
+        <p class="section-lead">Transforming standard customer record keeping into an autonomous revenue generation machine.</p>
+        
+        <div class="card card-accent">
+            <p><strong>Primary Objective:</strong> Build a high-performance, proprietary CRM engineered to unify client contact intelligence, AI-driven inbound/outbound communication (Voice, WhatsApp, Instagram), and multi-platform marketing analytics (Meta, Google, LinkedIn) into a consolidated command center.</p>
+            
+            <div class="grid-3" style="margin-top: 20px;">
+                <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid var(--border);">
+                    <h4>⚡ Autonomous Engagement</h4>
+                    <p class="text-sm text-muted">Sub-5-minute AI follow-ups via automated voice calls and WhatsApp workflows.</p>
+                </div>
+                <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid var(--border);">
+                    <h4>📊 Closed-Loop ROI</h4>
+                    <p class="text-sm text-muted">Directly attribute paid ad spend on Meta/Google to closed CRM pipeline deals.</p>
+                </div>
+                <div style="background: #f8fafc; padding: 14px; border-radius: 8px; border: 1px solid var(--border);">
+                    <h4>🛡️ Sovereign Infrastructure</h4>
+                    <p class="text-sm text-muted">Self-hosted on Indian VPS infrastructure, guaranteeing data control and low OPEX.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ARCHITECTURE & LEAD FLOW (INFOGRAPHIC) -->
+    <section>
+        <div class="section-header">
+            <h2><span>⚡</span> 2. Visual Architecture & Omnichannel Flow</h2>
+            <span class="section-tag">Infographic Blueprint</span>
+        </div>
+        <p class="section-lead">High-concurrency data pipeline connecting omni-touchpoints to database and AI layers.</p>
+
+        <div class="infographic-flow">
+            <!-- Flow Row 1: Ingestion -->
+            <div class="flow-row">
+                <div class="flow-node">
+                    <h4>📞 Ai Voice Call</h4>
+                    <p>SIP Trunking / WebRTC</p>
+                </div>
+                <div class="flow-node">
+                    <h4>💬 WhatsApp Business</h4>
+                    <p>Meta Cloud API Webhook</p>
+                </div>
+                <div class="flow-node">
+                    <h4>📸 Instagram Direct</h4>
+                    <p>Graph API Webhook</p>
+                </div>
+                <div class="flow-node">
+                    <h4>📈 Paid Ad Channels</h4>
+                    <p>Google / Meta / LinkedIn</p>
+                </div>
+            </div>
+
+            <div class="flow-connector">▼ &nbsp; Real-time Webhooks & Events &nbsp; ▼</div>
+
+            <!-- Flow Row 2: Ingestion & Queuing Layer -->
+            <div class="flow-row">
+                <div class="flow-node primary" style="grid-column: 1 / -1;">
+                    <h4>🚀 API GATEWAY & CONCURRENCY BUFFER (Node.js + Redis + BullMQ)</h4>
+                    <p>Prevents server bottlenecks, handles API rate limits, and orchestrates asynchronous background workers</p>
+                </div>
+            </div>
+
+            <div class="flow-connector">▼ &nbsp; Processed Dispatches &nbsp; ▼</div>
+
+            <!-- Flow Row 3: Processing & Brain -->
+            <div class="flow-row">
+                <div class="flow-node ai">
+                    <h4>🧠 AI Conversational Brain</h4>
+                    <p>OpenAI GPT-4o / Prompt Engine</p>
+                </div>
+                <div class="flow-node ai">
+                    <h4>🎙️ Voice Orchestration</h4>
+                    <p>Vapi / Retell AI Voice Node</p>
+                </div>
+                <div class="flow-node">
+                    <h4>🗄️ Relational Data Storage</h4>
+                    <p>PostgreSQL with JSONB Custom Fields</p>
+                </div>
+                <div class="flow-node">
+                    <h4>📊 Live Attribution Engine</h4>
+                    <p>ROAS & Pipeline Linkage</p>
+                </div>
+            </div>
+
+            <div class="flow-connector">▼ &nbsp; Unified WebSocket Streaming &nbsp; ▼</div>
+
+            <!-- Flow Row 4: Single UI Dashboard -->
+            <div class="flow-row">
+                <div class="flow-node" style="grid-column: 1 / -1; background: #fdf2f8; border-color: var(--primary);">
+                    <h4 style="color: var(--primary-dark);">💻 UNIFIED REACT (NEXT.JS) AGENT DASHBOARD</h4>
+                    <p>Kanban Sales Pipeline • Real-Time Unified Omnichannel Inbox • Live Multi-Platform Ad Spend Metrics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: DETAILED FEATURE SCOPE -->
+    <section>
+        <div class="section-header">
+            <h2><span>📦</span> 3. Detailed Feature Scope by Module</h2>
+            <span class="section-tag">Functional Specs</span>
+        </div>
+        
+        <div class="grid">
+            <!-- Module A -->
+            <div class="card card-accent">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h3>🗄️ Module A: Core CRM & Customization</h3>
+                    <span class="badge badge-core">Core Engine</span>
+                </div>
+                <ul>
+                    <li><strong>Dynamic Schema Customization:</strong> Enables administrators to define custom data fields (text, dropdowns, dates, stages) on the fly utilizing PostgreSQL <code>JSONB</code> structures.</li>
+                    <li><strong>360° Contact Management:</strong> Unified profiles storing lead demographic data, purchase intent, and multi-channel activity history.</li>
+                    <li><strong>Visual Kanban Pipelines:</strong> Drag-and-drop opportunity management with custom deal stages, win probabilities, and value calculations.</li>
+                    <li><strong>Role-Based Access Control (RBAC):</strong> Granular permissions separating Super Admins, Sales Managers, and Frontline Agents.</li>
+                </ul>
+            </div>
+
+            <!-- Module B -->
+            <div class="card card-accent">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h3>💬 Module B: Omnichannel AI Communications</h3>
+                    <span class="badge badge-ai">AI Layer</span>
+                </div>
+                <ul>
+                    <li><strong>Unified Agent Inbox:</strong> Single multi-threaded workspace handling emails, WhatsApp messages, and Instagram DMs.</li>
+                    <li><strong>AI Chat Agents (WhatsApp & Instagram):</strong>
+                        <ul class="sub-list">
+                            <li>Autonomous FAQ handling, lead qualification, and meeting scheduling.</li>
+                            <li>Automated fallback and human handoff on negative sentiment detection.</li>
+                        </ul>
+                    </li>
+                    <li><strong>AI Voice Calling Infrastructure:</strong>
+                        <ul class="sub-list">
+                            <li><strong>Inbound:</strong> AI Virtual Receptionist to qualify leads and log transcript summaries.</li>
+                            <li><strong>Outbound:</strong> Event-driven voice calls triggered post-form submissions.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Module C -->
+            <div class="card card-accent" style="grid-column: 1 / -1;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h3>📊 Module C: Marketing Automation & Live Ad Dashboards</h3>
+                    <span class="badge badge-marketing">Growth Engine</span>
+                </div>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                    <div>
+                        <h4>📈 Live Paid Ads Intelligence</h4>
+                        <ul>
+                            <li>Read-only API synchronizations with Meta, Google, and LinkedIn Marketing APIs.</li>
+                            <li>Aggregated dashboards displaying Live Spend, Cost Per Click (CPC), Leads, and ROAS.</li>
+                            <li>Hourly synchronization via Redis-managed background cron jobs.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>📱 Social Publishing & Drip Automation</h4>
+                        <ul>
+                            <li>Multi-platform social content scheduler for LinkedIn and Meta pages.</li>
+                            <li>Trigger-based WhatsApp/Email drip marketing sequences based on pipeline progression.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: ENTERPRISE TECH STACK -->
+    <section>
+        <div class="section-header">
+            <h2><span>🛠️</span> 4. Technology Stack & Infrastructure</h2>
+            <span class="section-tag">System Design</span>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Frontend & UI Layer</h3>
+                <p class="text-sm text-muted">High-speed, responsive dashboard for sales reps.</p>
+                <div class="tech-pill-container">
+                    <span class="tech-pill">React.js</span>
+                    <span class="tech-pill">Next.js (App Router)</span>
+                    <span class="tech-pill">Tailwind CSS</span>
+                    <span class="tech-pill">Shadcn / MUI</span>
+                    <span class="tech-pill">Lucide Icons</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Backend & API Services</h3>
+                <p class="text-sm text-muted">Scalable, non-blocking asynchronous event handling.</p>
+                <div class="tech-pill-container">
+                    <span class="tech-pill">Node.js (NestJS / Express)</span>
+                    <span class="tech-pill">WebSockets (wss)</span>
+                    <span class="tech-pill">REST / GraphQL APIs</span>
+                    <span class="tech-pill">BullMQ (Task Queues)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Database & Storage Layer</h3>
+                <p class="text-sm text-muted">High-performance data persistence and media storage.</p>
+                <div class="tech-pill-container">
+                    <span class="tech-pill">PostgreSQL (Primary DB)</span>
+                    <span class="tech-pill">Redis (In-Memory Cache)</span>
+                    <span class="tech-pill">Prisma ORM</span>
+                    <span class="tech-pill">JSONB (Dynamic Schemas)</span>
+                    <span class="tech-pill">AWS S3 (Call Logs & Media)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>AI & Omnichannel Services</h3>
+                <p class="text-sm text-muted">Enterprise model integrations & communication gateways.</p>
+                <div class="tech-pill-container">
+                    <span class="tech-pill">OpenAI GPT-4o API</span>
+                    <span class="tech-pill">Vapi / Retell AI (Voice)</span>
+                    <span class="tech-pill">Meta WhatsApp Cloud API</span>
+                    <span class="tech-pill">Instagram Graph API</span>
+                </div>
+            </div>
+
+            <div class="card" style="grid-column: 1 / -1;">
+                <h3>Infrastructure & DevOps</h3>
+                <p class="text-sm text-muted">Cost-effective, sovereign hosting in India.</p>
+                <div class="tech-pill-container">
+                    <span class="tech-pill">Hostinger KVM 8 VPS (Mumbai)</span>
+                    <span class="tech-pill">8 vCPU • 32 GB RAM</span>
+                    <span class="tech-pill">Docker Containers</span>
+                    <span class="tech-pill">Nginx Reverse Proxy</span>
+                    <span class="tech-pill">GitHub Actions CI/CD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: RESOURCE ALLOCATION -->
+    <section>
+        <div class="section-header">
+            <h2><span>👥</span> 5. Resource Allocation & Team Structure</h2>
+            <span class="section-tag">Engineering Squad</span>
+        </div>
+        <p class="section-lead">Cross-functional team of 7 professionals dedicated for the development cycle.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Count</th>
+                    <th>Core Focus & Primary Deliverables</th>
+                    <th>Allocation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Technical Project Manager</strong></td>
+                    <td>1</td>
+                    <td>Sprint planning, API verification (Meta App Review), timeline tracking.</td>
+                    <td><span class="badge badge-core">Full-Time</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Senior UI/UX Designer</strong></td>
+                    <td>1</td>
+                    <td>Design system, Unified Inbox UI, Drag-and-Drop pipeline UX, Ads widgets.</td>
+                    <td><span class="badge badge-core">Full-Time</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Senior Backend Architect</strong></td>
+                    <td>1</td>
+                    <td>PostgreSQL JSONB models, RBAC security, API routes, database backups.</td>
+                    <td><span class="badge badge-core">Full-Time</span></td>
+                </tr>
+                
+                <tr>
+                    <td><strong>Frontend Engineers</strong></td>
+                    <td>2</td>
+                    <td>Kanban boards, real-time WebSocket messaging, analytics dashboards.</td>
+                    <td><span class="badge badge-core">Full-Time</span></td>
+                </tr>
+                <tr>
+                    <td><strong>AI & API Integration Lead</strong></td>
+                    <td>1</td>
+                    <td>Voice AI latency tuning, OpenAI prompt chaining, Meta/Google API sync.</td>
+                    <td><span class="badge badge-ai">Full-Time</span></td>
+                </tr>
+                <tr>
+                    <td><strong>QA Automation Engineer</strong></td>
+                    <td>1</td>
+                    <td>Stress testing, queue failover checks, AI prompt edge-case testing.</td>
+                    <td><span class="badge badge-infra">Full-Time</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- SECTION 6: PHASED ROADMAP (VISUAL INFOGRAPHIC) -->
+    <section>
+        <div class="section-header">
+            <h2><span>📅</span> 6. Phased Roadmap</h2>
+            <span class="section-tag">Execution Plan</span>
+        </div>
+
+        <div class="roadmap-timeline">
+            <!-- Phase 1 -->
+            <div class="phase-block">
+                <div class="phase-sidebar">
+                    <span class="phase-num">Phase 1</span>
+                    <span class="phase-months">Week 3–5</span>
+                </div>
+                <div class="phase-content">
+                    <h4>Foundation, Database Architecture & Core CRM</h4>
+                    <p class="text-sm text-muted">Setup PostgreSQL schema, JSONB custom fields, auth/RBAC, contact list management, and interactive Kanban boards.</p>
+                    <div class="phase-progress-bar"><div class="phase-fill" style="width: 100%;"></div></div>
+                </div>
+            </div>
+
+
+            <!-- Phase 2 -->
+            <div class="phase-block">
+                <div class="phase-sidebar">
+                    <span class="phase-num">Phase 2</span>
+                    <span class="phase-months">Week 5-8</span>
+                </div>
+                <div class="phase-content">
+                    <h4>Omnichannel Inbox & AI Chat Agents</h4>
+                    <p class="text-sm text-muted">Deploy Unified Inbox (WhatsApp + Instagram). Integrate OpenAI GPT-4o for automated lead qualification and appointment booking.</p>
+                    <div class="phase-progress-bar"><div class="phase-fill" style="width: 100%;"></div></div>
+                </div>
+            </div>
+            
+             <!-- Phase 3 -->
+            <div class="phase-block">
+                <div class="phase-sidebar">
+                    <span class="phase-num">Phase 3</span>
+                    <span class="phase-months">Week 8-10</span>
+                </div>
+                <div class="phase-content">
+                    <h4>Marketing, Live Ad Dashboards & Social Scheduling</h4>
+                    <p class="text-sm text-muted">Integrate Google, Meta, and LinkedIn Marketing APIs. Implement live spend widgets and the multi-platform post scheduler.</p>
+                    <div class="phase-progress-bar"><div class="phase-fill" style="width: 100%;"></div></div>
+                </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase-block">
+                <div class="phase-sidebar">
+                    <span class="phase-num">Phase 4</span>
+                    <span class="phase-months">Week 10-12</span>
+                </div>
+                <div class="phase-content">
+                    <h4>Autonomous Voice AI Integration</h4>
+                    <p class="text-sm text-muted">Implement inbound receptionist and outbound automated voice calling via Vapi/Retell API with automatic CRM logging.</p>
+                    <div class="phase-progress-bar"><div class="phase-fill" style="width: 100%;"></div></div>
+                </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase-block">
+                <div class="phase-sidebar">
+                    <span class="phase-num">Phase 5</span>
+                    <span class="phase-months">Month 1</span>
+                </div>
+                <div class="phase-content">
+                    <h4>Concurrency Testing, Security Audits & Production Go-Live</h4>
+                    <p class="text-sm text-muted">Load-testing webhook queues (1,000+ mock pings/sec), end-to-end security penetration testing, and Hostinger VPS deployment.</p>
+                    <div class="phase-progress-bar"><div class="phase-fill" style="width: 100%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section>
+        <!-- OPEX Callout -->
+        <div class="callout">
+            <div class="callout-title">⚠️ Operational Expenditure Notice (Post-Launch)</div>
+            <p class="text-sm">Once the CRM is active in production, hosting costs remain fixed (~₹3,000 - ₹5,000/month on Hostinger VPS), while third-party API usage scales with user activity:</p>
+            <ul class="text-sm" style="margin-top: 8px;">
+                <li><strong>AI Voice Calling:</strong> ₹4.00 – ₹12.00 per connected minute.</li>
+                <li><strong>WhatsApp Business API:</strong> ~₹0.72 per marketing conversation in India.</li>
+                <li><strong>LLM Tokens (GPT-4o):</strong> ~₹5,000 – ₹25,000/month depending on message volume.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="margin-top: 50px; padding: 25px; text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border);">
+        <p><strong>Creativ Plus Confidential</strong> • Strategic Scope for Internal Engineering & Investors</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

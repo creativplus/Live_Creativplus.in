@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Scope: Creativ Plus AI Voice Platform</title>
+    <style>
+        :root {
+            /* BRAND THEME: Deep Wine & Professional Grey */
+            --primary: #590d22; /* Deep Wine / Burgundy */
+            --primary-dark: #2b061e; /* Darker Wine */
+            --secondary: #4a4e69; /* Muted Slate */
+            --accent: #9d0208; /* Vivid Wine Red */
+            --bg-body: #f8f9fa; /* Light Grey */
+            --bg-card: #ffffff;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --border: #dee2e6;
+            
+            /* Status Colors */
+            --success: #198754;
+            --success-bg: #d1e7dd;
+            --warning: #ffc107;
+            --warning-bg: #fff3cd;
+            --danger: #dc3545;
+            --danger-bg: #f8d7da;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.8rem; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.2em; }
+        h2 { 
+            font-size: 1.8rem; 
+            border-bottom: 3px solid var(--primary); 
+            padding-bottom: 10px; 
+            margin-top: 50px; 
+            margin-bottom: 25px; 
+            display: inline-block;
+            padding-right: 20px;
+        }
+        h3 { font-size: 1.3rem; margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        h4 { font-size: 1rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+        
+        p { margin-bottom: 1em; color: var(--text-main); }
+
+        /* --- COVER SECTION --- */
+        .cover {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .cover::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 60%);
+        }
+        .cover h1 { color: white; margin-bottom: 5px; }
+        .cover .brand-badge { 
+            background: rgba(255,255,255,0.2); 
+            padding: 5px 12px; 
+            border-radius: 20px; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .cover .subtitle { font-size: 1.4rem; opacity: 0.95; font-weight: 300; margin-bottom: 30px; }
+        .cover .meta { 
+            display: flex; 
+            gap: 30px; 
+            font-size: 0.95rem; 
+            border-top: 1px solid rgba(255,255,255,0.2); 
+            padding-top: 20px;
+        }
+
+        /* --- CARDS & GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            break-inside: avoid;
+            transition: transform 0.2s;
+        }
+        
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+
+        .tech-stack-box {
+            background: #f1f3f5;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            border: 1px solid #e9ecef;
+        }
+        .tech-stack-label {
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        /* --- ARCHITECTURE DIAGRAM --- */
+        .architecture-box {
+            background: #212529;
+            color: #f8f9fa;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 25px;
+            border-radius: 8px;
+            white-space: pre;
+            overflow-x: auto;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            border: 1px solid #343a40;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* --- TABLES --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        tr:nth-child(even) { background-color: #f8f9fa; }
+        
+        /* Cost Table Specifics */
+        .cost-table th { background-color: #2b061e; }
+        .cost-table .total-row td { 
+            font-weight: bold; 
+            background-color: var(--primary-dark); 
+            color: white; 
+            font-size: 1.1rem;
+        }
+
+        /* --- BADGES --- */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge-mandatory { background: var(--success-bg); color: var(--success); }
+        .badge-optional { background: var(--warning-bg); color: #856404; }
+        .badge-tech { background: #e9ecef; color: var(--secondary); border: 1px solid #ced4da; margin-right: 5px; margin-bottom: 5px; }
+
+        /* --- CALLOUTS --- */
+        .callout {
+            padding: 15px;
+            border-left: 4px solid var(--accent);
+            background: #fff5f5; /* Light Red tint */
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .callout-title { font-weight: 700; color: var(--accent); font-size: 0.9rem; margin-bottom: 5px; text-transform: uppercase; }
+
+        /* --- UTILS --- */
+        .section-break { page-break-before: always; }
+        .text-sm { font-size: 0.9rem; }
+        .text-bold { font-weight: 700; }
+        ul { list-style: none; padding-left: 0; }
+        ul li { position: relative; padding-left: 20px; margin-bottom: 6px; }
+        ul li::before { content: "•"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
+
+        /* --- PRINT STYLES --- */
+        @media print {
+            body { background: white; -webkit-print-color-adjust: exact; }
+            .container { max-width: 100%; padding: 0; }
+            .cover { background: var(--primary) !important; color: white !important; }
+            .card { break-inside: avoid; border: 1px solid #ccc; box-shadow: none; }
+            .architecture-box { background: #fff; color: black; border: 1px solid black; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="cover">
+        <span class="brand-badge">Creativ Plus</span>
+        <h1>AI Voice Platform</h1>
+        <div class="subtitle">Multilingual • Enterprise-Grade • Omni-Channel</div>
+        
+        <div class="meta">
+            <div>
+                <strong>Scope:</strong> End-to-End Voice & Chat AI
+            </div>
+            <div>
+                <strong>Target:</strong> 10x-30x Cost Reduction
+            </div>
+            <div>
+                <strong>Version:</strong> 3.0 (Advanced Capabilities)
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2>1. Executive Summary</h2>
+        <div class="card">
+            <p><strong>Objective:</strong> <strong>Creativ Plus</strong> will engineer a proprietary, hyper-realistic AI voice platform capable of handling real-time, multilingual conversations. This system is designed to replace expensive third-party vendors (e.g., Vapi, Retell) with a self-owned infrastructure that spans voice, chat, and automated follow-ups.</p>
+            
+            <div class="grid-3" style="margin-top: 20px;">
+                <div>
+                    <h4>💰 Cost Efficiency</h4>
+                    <p class="text-sm">Reduction from ₹2.5/min to <strong>₹0.15/min</strong> via self-hosting.</p>
+                </div>
+                <div>
+                    <h4>🌏 Global & Local</h4>
+                    <p class="text-sm">Native support for <strong>Indian Regional</strong> & International languages.</p>
+                </div>
+                <div>
+                    <h4>🔗 Omni-Channel</h4>
+                    <p class="text-sm">Unified Voice, WhatsApp, and Web Chat experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. System Architecture</h2>
+        <div class="architecture-box">
+[ USERS ] ─── (Voice / Chat / Email) ───┐
+                                        ⬇
+[ CHANNEL GATEWAY ] ─── [ OMNI-CHANNEL ORCHESTRATOR ] ◄── [ INTEGRATION HUB ]
+(Twilio / WhatsApp / Web)          │                      ├── Google Workspace
+                                   │                      ├── CRMs (Salesforce)
+                                   │                      └── Smart Retry Logic
+       ┌───────────────────────────┤
+       │                           │
+       ⬇                           ⬇
+[ STT ENGINE ]              [ LLM BRAIN ] ───▶ [ FOLLOW-UP AGENT ]
+(Whisper V3)                (Context Aware)      (Queues & Schedulers)
+                                   │
+                                   ⬇
+                            [ TTS ENGINE ]
+                            (Neural Voice)
+                                   ⬇
+                           (Audio/Text Response)
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Core Components & Tech Stack</h2>
+        
+        <div class="grid">
+            <article class="card">
+                <h3>📞 A. Telephony Layer</h3>
+                <p class="text-sm">Manages inbound/outbound calls and SIP trunking.</p>
+                
+                <div class="tech-stack-box">
+                    <span class="tech-stack-label">Tech Stack</span>
+                    <span class="badge badge-tech">Twilio SDK</span>
+                    <span class="badge badge-tech">Asterisk (Optional)</span>
+                    <span class="badge badge-tech">FreeSWITCH</span>
+                    <span class="badge badge-tech">SIP / RTP</span>
+                </div>
+                
+                <div style="margin-top:15px;">
+                    <strong>Phase 1:</strong> API (Twilio/Plivo) for speed.<br>
+                    <strong>Phase 2:</strong> Direct SIP Trunking for cost.
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>⚡ B. Orchestration & Streaming</h3>
+                <p class="text-sm">Real-time audio buffering, barge-in logic, and latency management.</p>
+                
+                <div class="tech-stack-box">
+                    <span class="tech-stack-label">Tech Stack</span>
+                    <span class="badge badge-tech">Node.js / Python FastAPI</span>
+                    <span class="badge badge-tech">WebSockets (wss)</span>
+                    <span class="badge badge-tech">Redis (State)</span>
+                    <span class="badge badge-tech">Docker</span>
+                </div>
+
+                <div class="callout" style="margin: 15px 0 0 0;">
+                    <div class="callout-title">Critical</div>
+                    Must handle sub-500ms latency for natural feel.
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>🌏 C. STT & Multilingual Support</h3>
+                <p class="text-sm">High-accuracy transcription for diverse accents and languages.</p>
+                
+                <div class="tech-stack-box">
+                    <span class="tech-stack-label">Tech Stack</span>
+                    <span class="badge badge-tech">OpenAI Whisper V3</span>
+                    <span class="badge badge-tech">Faster-Whisper</span>
+                    <span class="badge badge-tech">Deepgram (Backup)</span>
+                </div>
+
+                <ul class="text-sm" style="margin-top: 15px;">
+                    <li><strong>Indian:</strong> Hindi, Hinglish, Tamil, Telugu, Marathi.</li>
+                    <li><strong>International:</strong> English (US/UK/AU), Spanish, French, Arabic.</li>
+                    <li><strong>Feature:</strong> Auto-language detection.</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>🧠 D. LLM & Integrations Hub</h3>
+                <p class="text-sm">The decision engine connected to business tools.</p>
+                
+                <div class="tech-stack-box">
+                    <span class="tech-stack-label">Tech Stack</span>
+                    <span class="badge badge-tech">GPT-4o</span>
+                    <span class="badge badge-tech">Claude 3.5 Sonnet</span>
+                    <span class="badge badge-tech">LangChain</span>
+                    <span class="badge badge-tech">Oauth 2.0</span>
+                </div>
+
+                <div style="margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">
+                    <strong>🔌 Connectors Required:</strong>
+                    <ul class="text-sm">
+                        <li><strong>Google Workspace:</strong> Calendar (Booking), Sheets (Logging), Gmail (Follow-up).</li>
+                        <li><strong>CRMs:</strong> Salesforce, HubSpot, Zoho.</li>
+                        <li><strong>Tools:</strong> Slack, Zapier Webhooks.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>🔊 E. TTS (Text to Speech)</h3>
+                <p class="text-sm">Hyper-realistic neural voice synthesis.</p>
+                
+                <div class="tech-stack-box">
+                    <span class="tech-stack-label">Tech Stack</span>
+                    <span class="badge badge-tech">ElevenLabs API (MVP)</span>
+                    <span class="badge badge-tech">Coqui XTTS (Self-hosted)</span>
+                    <span class="badge badge-tech">StyleTTS2</span>
+                    <span class="badge badge-tech">CUDA/GPU</span>
+                </div>
+            </article>
+
+             <article class="card">
+                <h3>📊 F. Platform Dashboard</h3>
+                <p class="text-sm">Admin control, analytics, and call logs.</p>
+                
+                <div class="tech-stack-box">
+                    <span class="tech-stack-label">Tech Stack</span>
+                    <span class="badge badge-tech">React / Next.js</span>
+                    <span class="badge badge-tech">PostgreSQL</span>
+                    <span class="badge badge-tech">Tailwind CSS</span>
+                    <span class="badge badge-tech">AWS/GCP</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="section-break"></div>
+
+    <section>
+        <h2>4. Advanced Capabilities</h2>
+        <div class="grid">
+            
+            <article class="card" style="border-left-color: var(--accent);">
+                <h3>💬 Omni-Channel Engagement</h3>
+                <p class="text-sm">Seamless conversational experiences across voice and text platforms. The AI maintains context regardless of where the user engages.</p>
+                
+                <ul class="text-sm" style="margin-top: 15px;">
+                    <li><strong>Channels:</strong> Voice, WhatsApp, Instagram DM, Web Chat, Email.</li>
+                    <li><strong>Context:</strong> Unified session history across all channels.</li>
+                </ul>
+
+                <div class="tech-stack-box">
+                    <span class="tech-stack-label">Tech Stack</span>
+                    <span class="badge badge-tech">WhatsApp Business API</span>
+                    <span class="badge badge-tech">Instagram Graph API</span>
+                    <span class="badge badge-tech">Socket.io (Web)</span>
+                    <span class="badge badge-tech">SendGrid (Email)</span>
+                </div>
+            </article>
+
+            <article class="card" style="border-left-color: var(--accent);">
+                <h3>↩️ Smart Follow-Ups & Retry</h3>
+                <p class="text-sm">Automated logic to handle unconverted leads and failed calls.</p>
+
+                <div style="margin-top: 15px;">
+                    <strong>Features:</strong>
+                    <ul class="text-sm">
+                        <li><strong>Auto-Retry:</strong> Logic to retry failed/unanswered calls after N minutes.</li>
+                        <li><strong>Intelligent Transfer:</strong> Seamless handoff to human agents when sentiment is negative or query is complex.</li>
+                        <li><strong>Drip Campaigns:</strong> Send WhatsApp/SMS summaries after calls.</li>
+                    </ul>
+                </div>
+
+                <div class="tech-stack-box">
+                    <span class="tech-stack-label">Tech Stack</span>
+                    <span class="badge badge-tech">BullMQ / Redis (Queues)</span>
+                    <span class="badge badge-tech">Cron Jobs</span>
+                    <span class="badge badge-tech">Twilio Programmable Messaging</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Cost Analysis: Per Minute Breakdown</h2>
+        <p>Comparison between using Managed Services (Current Market Standard) vs. <strong>Creativ Plus Optimized (Target)</strong>.</p>
+        
+        <table class="cost-table">
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Before (Managed APIs)</th>
+                    <th>After (Creativ Plus Target)</th>
+                    <th>Optimization Strategy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Telephony</strong></td>
+                    <td>₹1.20 / min</td>
+                    <td>₹0.40 / min</td>
+                    <td>Switch from CPaaS to SIP Trunking</td>
+                </tr>
+                <tr>
+                    <td><strong>STT (Transcripts)</strong></td>
+                    <td>₹0.50 / min</td>
+                    <td>₹0.02 / min</td>
+                    <td>Self-hosted Whisper V3 on GPU</td>
+                </tr>
+                <tr>
+                    <td><strong>LLM (Intelligence)</strong></td>
+                    <td>₹0.80 / min</td>
+                    <td>₹0.20 / min</td>
+                    <td>Optimized Prompts + LLaMA 3 (Self-host)</td>
+                </tr>
+                <tr>
+                    <td><strong>TTS (Voice)</strong></td>
+                    <td>₹2.50 / min</td>
+                    <td>₹0.05 / min</td>
+                    <td>Self-hosted XTTS / StyleTTS</td>
+                </tr>
+                <tr>
+                    <td><strong>Platform Fee</strong></td>
+                    <td>₹4.00 / min (Vendor Markup)</td>
+                    <td>₹0.00 / min</td>
+                    <td>Fully Owned Infrastructure</td>
+                </tr>
+                <tr class="total-row">
+                    <td>TOTAL COST</td>
+                    <td>~ ₹9.00 / min</td>
+                    <td>~ ₹0.67 / min</td>
+                    <td>92% Cost Reduction</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="callout">
+            <div class="callout-title">Investor Note</div>
+            At 100,000 minutes/month, this saves approximately <strong>₹8,33,000 per month</strong>, recovering development costs within 3-4 months.
+        </div>
+    </section>
+
+    <section>
+        <h2>6. Roadmap & Requirements</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>📅 Phase-wise Roadmap</h3>
+                <ul>
+                    <li><strong>Month 1: Core Engine</strong><br>
+                        <span class="text-sm text-muted">Telephony, Basic STT/TTS API, Websocket Orchestration.</span>
+                    </li>
+                    <li><strong>Month 2: Intelligence & Omni-Channel</strong><br>
+                        <span class="text-sm text-muted">LLM Integration, WhatsApp/Web integration, CRM Hooks.</span>
+                    </li>
+                    <li><strong>Month 3: Optimization & Scale</strong><br>
+                        <span class="text-sm text-muted">Self-hosted GPU infra, Smart Retry Logic, Production rollout.</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>👥 Team & Skills</h3>
+                <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;">
+                    <span class="badge badge-mandatory">Backend (Node/Python)</span>
+                    <span class="badge badge-mandatory">AI/ML Engineer (Voice)</span>
+                    <span class="badge badge-mandatory">DevOps (GPU/Docker)</span>
+                    <span class="badge badge-optional">Frontend (React)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-top: 60px; padding: 20px; text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border);">
+        <p><strong>Creativ Plus Confidential</strong> • Generated for Internal Engineering & Investors</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

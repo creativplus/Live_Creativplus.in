@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Creativ Plus | India’s AI Workforce for MSMEs</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='227 267 154 154'%3E%3Cdefs%3E%3ClinearGradient id='wineGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E61C53'/%3E%3Cstop offset='100%25' stop-color='%237B0323'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23wineGrad)'%3E%3Cpath d='M329.24,358.88l-22.57,22.61c-7.85,7.86-20.58,7.86-28.44,0.02l-23.01-22.98c-7.86-7.85-7.87-20.58-0.02-28.44l22.98-23.01c7.85-7.86,20.58-7.87,28.44-0.02l22.5,22.47c5.16,5.16,13.53,5.15,18.69-0.01s5.15-13.53-0.01-18.69l-20.6-20.57c-6.42-6.41-16.81-6.4-23.21,0.01c-6.41,6.42-16.79,6.43-23.21,0.02c-3.21-3.2-7.4-4.8-11.6-4.8c-4.2,0-8.39,1.61-11.6,4.82l-19.18,19.21c-6.41,6.42-6.4,16.81,0.01,23.21c3.21,3.2,4.81,7.4,4.82,11.6c0,4.2-1.6,8.4-4.8,11.6c-3.2,3.2-4.8,7.41-4.79,11.61c0,4.2,1.61,8.39,4.82,11.6l19.21,19.18c6.42,6.41,16.8,6.39,23.2-0.02c3.2-3.21,7.4-4.81,11.61-4.81c4.2,0,8.4,1.6,11.6,4.8c3.2,3.2,7.41,4.8,11.6,4.8c4.21-0.01,8.4-1.62,11.61-4.83l20.68-20.7c5.16-5.16,5.15-13.53-0.01-18.69C342.77,353.71,334.4,353.72,329.24,358.88z'/%3E%3Cpath d='M375.84,342.88c-5.61-3.07-10.22-7.68-13.29-13.29l-1.4-2.57l-1.4,2.57c-3.07,5.61-7.68,10.22-13.29,13.29l-2.57,1.4l2.57,1.4c5.61,3.07,10.22,7.68,13.29,13.29l1.4,2.57l1.4-2.57c3.07-5.61,7.68-10.22,13.29-13.29l2.57-1.4L375.84,342.88z'/%3E%3Cpath d='M294.1,329.59l-1.4-2.57l-1.4,2.57c-3.07,5.61-7.68,10.22-13.29,13.29l-2.57,1.4l2.57,1.4c5.61,3.07,10.22,7.68,13.29,13.29l1.4,2.57l1.4-2.57c3.07-5.61,7.68-10.22,13.29-13.29l2.57-1.4l-2.57-1.4C301.78,339.81,297.17,335.2,294.1,329.59z'/%3E%3C/g%3E%3C/svg%3E">
+
+    <style>
+        :root {
+            --brand-red: #7b0323;
+            --bg-dark: #09090b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f4f4f4;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        /* Optimized Glow for Mobile */
+        .glow-bg {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(123, 3, 35, 0.15) 0%, rgba(9, 9, 11, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(60px);
+        }
+
+        .lift-card { 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(10px);
+        }
+        .lift-card:hover { 
+            transform: translateY(-5px); 
+            border-color: #7b0323; 
+            box-shadow: 0 10px 30px -10px rgba(123, 3, 35, 0.2);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #a1a1aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .italic-fix { padding-right: 0.15em; font-style: italic; }
+
+        /* --- PREMIUM MOBILE MENU SIDE DRAWER --- */
+        #mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 360px;
+            height: 100vh;
+            background: rgba(5, 5, 7, 0.95);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            transform: translateX(100%);
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem 2rem;
+            box-shadow: -20px 0 60px rgba(0,0,0,0.8);
+        }
+
+        #mobile-menu.open { transform: translateX(0); }
+
+        /* Menu Items Animation */
+        .menu-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        #mobile-menu.open .menu-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Staggered Delays */
+        #mobile-menu.open .menu-item:nth-child(1) { transition-delay: 0.1s; }
+        #mobile-menu.open .menu-item:nth-child(2) { transition-delay: 0.15s; }
+        #mobile-menu.open .menu-item:nth-child(3) { transition-delay: 0.2s; }
+        #mobile-menu.open .menu-item:nth-child(4) { transition-delay: 0.25s; }
+        #mobile-menu.open .menu-item-btn { transition-delay: 0.3s; }
+
+        .nav-link-mobile {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #a1a1aa;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+        .nav-link-mobile:hover, .nav-link-mobile.active {
+            color: #fff;
+            padding-left: 10px;
+        }
+        
+        /* Backdrop Overlay */
+        #menu-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+            z-index: 90;
+        }
+        #menu-backdrop.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .close-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .close-btn:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+        
+        .btn-brand-menu {
+            background: linear-gradient(135deg, #7b0323 0%, #5a021a 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-brand-menu:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950">
+
+    <div id="menu-backdrop"></div>
+
+    <div id="mobile-menu">
+        <div class="flex justify-between items-center mb-6 menu-item">
+            <a href="index.html" class="flex items-center z-50">
+                <img src="logo.svg" alt="Creativ Plus" class="h-10 md:h-12 w-auto object-contain">
+            </a>
+            <button id="close-menu-btn" class="close-btn text-white text-xl">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+        
+        <nav class="flex flex-col flex-1 overflow-y-auto custom-scroll pr-2">
+            <div class="menu-item">
+                <a href="index.html" class="nav-link-mobile">
+                    <span>Home</span>
+                    <i class='bx bx-chevron-right text-zinc-700'></i>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="arpit.html" class="nav-link-mobile">
+                    <span>Arpit AI</span>
+                    <i class='bx bx-chevron-right text-zinc-700'></i>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="arpit_demo.html" class="nav-link-mobile">
+                    <span>Arpit Demo</span>
+                    <i class='bx bx-chevron-right text-zinc-700'></i>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="https://dashboard.creativplus.in" class="nav-link-mobile">
+                    <span>Dashboard</span>
+                    <i class='bx bx-chevron-right text-zinc-700'></i>
+                </a>
+            </div>
+        </nav>
+
+        <div class="mt-4 space-y-6 menu-item menu-item-btn">
+            <a href="contact-us.html#contact-section" class="btn-brand-menu flex items-center justify-between px-6 py-4 rounded-xl text-sm font-bold uppercase tracking-widest shadow-2xl group">
+                <span>Talk to AI Consultant</span>
+                <i class='bx bx-right-arrow-alt text-xl group-hover:translate-x-1 transition-transform'></i>
+            </a>
+            <div class="flex justify-between items-center px-2">
+                <span class="text-zinc-600 text-[10px] uppercase tracking-widest font-bold">Connect With Us</span>
+                <div class="flex gap-4 text-zinc-500 text-xl">
+                    <a href="https://www.linkedin.com/company/creativplus/" target="_blank" class="hover:text-white transition"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/creativplus_official" target="_blank" class="hover:text-white transition"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://wa.me/919155567700" target="_blank" class="hover:text-white transition"><i class='bx bxl-whatsapp'></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-50 bg-zinc-950/90 backdrop-blur-xl border-b border-zinc-800/50">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center z-50">
+                <img src="logo.svg" alt="Creativ Plus" class="h-10 md:h-12 w-auto object-contain">
+            </a>
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
+                <a href="index.html" class="hover:text-[#7b0323] transition-all">Home</a>
+                <a href="arpit.html" class="hover:text-[#7b0323] transition-all">Arpit AI</a>
+                <a href="arpit_demo.html" class="hover:text-[#7b0323] transition-all">Arpit Demo</a>
+                <a href="https://dashboard.creativplus.in" class="hover:text-[#7b0323] transition-all">Dashboard</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="#contact-section" class="hidden md:block bg-[#7b0323] hover:bg-[#5a021a] active:scale-95 text-white px-5 py-2 rounded-full text-[10px] md:text-xs font-bold transition-all shadow-lg shadow-[#7b0323]/20">
+                    GET STARTED
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-3xl text-white z-50 focus:outline-none hover:text-[#7b0323] transition-colors">
+                    <i class='bx bx-menu-alt-right'></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative py-12 md:py-24 px-4 md:px-6 overflow-hidden">
+        <div class="glow-bg top-[-5%] left-[-5%]"></div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div data-aos="fade-right" data-aos-duration="800">
+                <span class="inline-block px-3 py-1 rounded-full bg-[#7b0323]/10 text-[#7b0323] font-bold tracking-widest text-[9px] uppercase mb-4 border border-[#7b0323]/20">
+                    // Future of Work
+                </span>
+                <h2 class="text-4xl md:text-7xl font-extrabold text-white mb-4 md:mb-8 leading-[1.1] tracking-tight">
+                    Building the <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-[#7b0323]">AI Infrastructure</span><br>
+                    for India.
+                </h2>
+                <p class="text-zinc-400 text-base md:text-lg leading-relaxed mb-6">
+                    At <strong>Creativ Plus</strong>, we are the architects of India’s AI Workforce movement. We empower MSMEs by replacing manual bottlenecks with 24/7 Agentic AI.
+                </p>
+                <div class="flex gap-4 items-center">
+                    <div class="h-[1px] w-8 md:w-12 bg-[#7b0323]"></div>
+                    <p class="text-zinc-500 text-xs md:text-sm font-medium">Scale without the overhead.</p>
+                </div>
+            </div>
+            
+            <div class="relative mt-4 md:mt-0" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#7b0323] to-purple-900 rounded-2xl blur opacity-20"></div>
+                <div class="relative rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="AI Technology" class="w-full h-[300px] md:h-[450px] object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-24 px-4 md:px-6 bg-zinc-900/20 relative">
+        <div class="max-w-7xl mx-auto text-center mb-10 md:mb-20">
+            <span class="text-[#d4af37] font-bold tracking-widest text-[10px] uppercase">Precision Engineering</span>
+            <h2 class="text-3xl md:text-4xl font-black text-white mt-2 text-gradient">The AI Advantage</h2>
+        </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
+            <div class="bg-zinc-950 border border-zinc-800/50 p-6 md:p-12 rounded-2xl md:rounded-[2rem] lift-card" data-aos="fade-up">
+                <div class="w-12 h-12 bg-[#7b0323]/10 rounded-xl flex items-center justify-center mb-6 border border-[#7b0323]/20">
+                    <i class='bx bx-chip text-[#7b0323] text-2xl'></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Tech Infrastructure</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">Specializing in LLM fine-tuning, RAG pipelines, and complex API integrations. We build the robust nervous system of your digital workforce.</p>
+            </div>
+            <div class="bg-zinc-950 border border-zinc-800/50 p-6 md:p-12 rounded-2xl md:rounded-[2rem] lift-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6 border border-amber-500/20">
+                    <i class='bx bx-bot text-[#d4af37] text-2xl'></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Autonomous Logic</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed">The architects of agency. We design systems that don’t just respond—they reason, execute tasks, and close high-ticket sales 24/7.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-24 px-4 md:px-6">
+        <div class="max-w-7xl mx-auto text-center mb-10 md:mb-20">
+            <h2 class="text-3xl md:text-4xl font-black text-white">The <span class="text-[#7b0323]">Deployment</span> Pipeline</h2>
+        </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 text-center">
+            <div class="group relative p-6 md:p-10 bg-zinc-900/30 rounded-2xl border border-zinc-800/50 hover:bg-zinc-900/50 transition-all" data-aos="fade-up">
+                <div class="text-5xl md:text-7xl font-black text-white/5 absolute -top-2 right-4 group-hover:text-[#7b0323]/10 transition-colors">01</div>
+                <h4 class="text-lg md:text-xl font-bold text-white mb-3 relative z-10">Audit</h4>
+                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed relative z-10">We deep-dive into your manual processes to find high-ROI automation gaps.</p>
+            </div>
+            <div class="group relative p-6 md:p-10 bg-zinc-900/30 rounded-2xl border border-zinc-800/50 hover:bg-zinc-900/50 transition-all" data-aos="fade-up" data-aos-delay="50">
+                <div class="text-5xl md:text-7xl font-black text-white/5 absolute -top-2 right-4 group-hover:text-[#7b0323]/10 transition-colors">02</div>
+                <h4 class="text-lg md:text-xl font-bold text-white mb-3 relative z-10">Architect</h4>
+                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed relative z-10">Custom building agentic logic and seamless tool integrations.</p>
+            </div>
+            <div class="group relative p-6 md:p-10 bg-zinc-900/30 rounded-2xl border border-zinc-800/50 hover:bg-zinc-900/50 transition-all" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-5xl md:text-7xl font-black text-white/5 absolute -top-2 right-4 group-hover:text-[#7b0323]/10 transition-colors">03</div>
+                <h4 class="text-lg md:text-xl font-bold text-white mb-3 relative z-10">Automate</h4>
+                <p class="text-zinc-400 text-xs md:text-sm leading-relaxed relative z-10">Live deployment with continuous monitoring for 100% accuracy.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact-section" class="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-24 relative">
+        <div class="glow-bg top-0 left-[20%] opacity-10"></div>
+        <div class="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
+            
+            <div data-aos="fade-right">
+                <span class="text-[#7b0323] font-bold tracking-widest text-xs uppercase">Connect</span>
+                <h1 class="text-4xl md:text-6xl font-black text-white mt-3 mb-6 leading-tight">
+                    Scale with <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-[#7b0323] italic-fix">AI Agents.</span>
+                </h1>
+                <p class="text-zinc-400 text-base md:text-lg mb-8 leading-relaxed">
+                    Ready to deploy an autonomous workforce? Our experts build custom AI Sales Agents and automation workflows designed for the Indian market.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#7b0323] text-xl group-hover:border-[#7b0323]/50 transition-all">
+                            <i class='bx bx-envelope'></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Email Us</p>
+                            <p class="text-white font-medium text-sm md:text-lg">hello@creativplus.in</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#7b0323] text-xl group-hover:border-[#7b0323]/50 transition-all">
+                            <i class='bx bx-phone'></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Call Us</p>
+                            <p class="text-white font-medium text-sm md:text-lg">+91 91555 67700</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#7b0323] text-xl group-hover:border-[#7b0323]/50 transition-all">
+                            <i class='bx bx-map'></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Location</p>
+                            <p class="text-white font-medium text-sm md:text-lg">India | Global Operations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 md:mt-16 p-6 rounded-2xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800/50">
+                    <p class="text-zinc-400 text-xs italic leading-relaxed">"Our mission is to build India’s AI Workforce for MSMEs & SMEs with 24/7 Autonomous Agentic AI Agents."</p>
+                    <div class="flex items-center gap-3 mt-4">
+                        <div class="h-[2px] w-6 bg-[#7b0323]"></div>
+                        <p class="text-white font-bold text-xs">Kishan Singh, Founder & CEO</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-zinc-900/40 border border-zinc-800 rounded-3xl p-6 md:p-10 shadow-2xl backdrop-blur-md" data-aos="fade-left">
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label class="block text-[9px] mb-1.5 text-zinc-400 uppercase tracking-[0.2em] font-bold">Full Name</label>
+                        <div class="flex items-center gap-3 px-4 py-2.5 md:py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus-within:border-[#7b0323]/50 transition-all">
+                            <i class='bx bx-user text-zinc-500 text-lg'></i>
+                            <input type="text" id="userName" class="w-full bg-transparent outline-none text-sm text-white" placeholder="Enter your full name" required />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[9px] mb-1.5 text-zinc-400 uppercase tracking-[0.2em] font-bold">Work Email</label>
+                        <div class="flex items-center gap-3 px-4 py-2.5 md:py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus-within:border-[#7b0323]/50 transition-all">
+                            <i class='bx bx-envelope text-zinc-500 text-lg'></i>
+                            <input type="email" id="userEmail" class="w-full bg-transparent outline-none text-sm text-white" placeholder="you@company.com" required />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[9px] mb-1.5 text-zinc-400 uppercase tracking-[0.2em] font-bold">Phone</label>
+                        <div class="flex items-center gap-3 px-4 py-2.5 md:py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus-within:border-[#7b0323]/50 transition-all">
+                            <i class='bx bx-phone text-zinc-500 text-lg'></i>
+                            <input type="tel" id="userPhone" class="w-full bg-transparent outline-none text-sm text-white" placeholder="+91..." required />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[9px] mb-1.5 text-zinc-400 uppercase tracking-[0.2em] font-bold">Company Name</label>
+                        <div class="flex items-center gap-3 px-4 py-2.5 md:py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus-within:border-[#7b0323]/50 transition-all">
+                            <i class='bx bx-buildings text-zinc-500 text-lg'></i>
+                            <input type="text" id="companyName" class="w-full bg-transparent outline-none text-sm text-white" placeholder="Organisation name" />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[9px] mb-1.5 text-zinc-400 uppercase tracking-[0.2em] font-bold">Select a service</label>
+                        <div class="relative flex items-center gap-3 px-4 py-2.5 md:py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus-within:border-[#7b0323]/50 transition-all">
+                            <i class='bx bx-grid-alt text-zinc-500 text-lg'></i>
+                            <select id="serviceType" class="w-full bg-transparent outline-none text-sm text-white cursor-pointer appearance-none pr-8">
+                                <option class="bg-zinc-900">AI Strategy Consultation</option>
+                                <option class="bg-zinc-900">Marketing Automation Solution</option>
+                                <option class="bg-zinc-900">Sales & Follow-up Call Automation</option>
+                                <option class="bg-zinc-900">Customer Service with AI</option>
+                                <option class="bg-zinc-900">Content Creation solutions</option>
+                                <option class="bg-zinc-900">Custom AI Solution</option>
+                            </select>
+                            <i class='bx bx-chevron-down absolute right-4 text-zinc-500 pointer-events-none'></i>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[9px] mb-1.5 text-zinc-400 uppercase tracking-[0.2em] font-bold">What do you want to automate?</label>
+                        <div class="px-4 py-2.5 md:py-3 rounded-xl bg-zinc-950 border border-zinc-800 focus-within:border-[#7b0323]/50 transition-all">
+                            <textarea id="userMessage" rows="3" class="w-full bg-transparent outline-none text-sm text-white resize-none" placeholder="Describe your targets..."></textarea>
+                        </div>
+                    </div>
+
+                    <div id="formSuccess" class="hidden rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-emerald-300 text-xs flex items-center gap-2">
+                        <i class='bx bx-check-circle text-lg'></i>
+                        <span>Success! Our team will contact you shortly.</span>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="w-full py-3.5 md:py-4 bg-gradient-to-r from-[#7b0323] to-red-900 rounded-xl text-xs font-bold text-white uppercase tracking-widest flex items-center justify-center gap-3 shadow-xl shadow-[#7b0323]/40 hover:brightness-110 active:scale-[0.98] transition-all">
+                        <i class='bx bx-send text-lg'></i>
+                        <span>Request Strategy Session</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<footer class="bg-black border-t border-zinc-900 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <div class="space-y-6">
+                    <a href="index.html" class="flex items-center z-50">
+                        <img src="logo.svg" alt="Creativ Plus" class="h-12 w-auto object-contain">
+                    </a>
+                    <p class="text-zinc-500 text-sm leading-relaxed">
+                        Building India’s AI Workforce for MSMEs & SMEs. Deploying 24/7 Autonomous Agentic AI Agents to scale your operations.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/company/creativplus/" target="_blank" class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-[#7b0323] hover:border-[#7b0323] transition-all"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://www.instagram.com/creativplus_official" target="_blank" class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-[#7b0323] hover:border-[#7b0323] transition-all"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://wa.me/919155567700" target="_blank" class="w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 hover:text-emerald-500 hover:border-emerald-500 transition-all"><i class='bx bxl-whatsapp'></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-[0.2em]">AI Platforms</h5>
+                    <ul class="space-y-4">
+                        <li><a href="arpit.html" class="text-zinc-400 hover:text-white text-sm transition-colors flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-[#7b0323]"></span> Arpit AI Voice</a></li>
+                        <li><a href="arpit_demo.html" class="text-zinc-400 hover:text-white text-sm transition-colors flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-[#7b0323]"></span> Arpit Demo</a></li>
+                        <li><a href="https://dashboard.creativplus.in" class="text-zinc-400 hover:text-white text-sm transition-colors flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-[#7b0323]"></span> Agent Dashboard</a></li>
+                        <li><a href="pricing.html" class="text-zinc-400 hover:text-white text-sm transition-colors flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-[#7b0323]"></span> Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-[0.2em]">Quick Links</h5>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="index.html" class="text-zinc-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="contact-us.html" class="text-zinc-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="privacy-policy.html" class="text-zinc-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html" class="text-zinc-400 hover:text-white transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold mb-6 uppercase text-xs tracking-[0.2em]">System Status</h5>
+                    <div class="bg-zinc-900/50 border border-zinc-800 p-5 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            </span>
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">All Systems Operational</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-500 leading-tight">
+                            Our autonomous agents are currently processing leads across 12+ industry sectors in India.
+                        </p>
+                    </div>
+                    <a href="refund-policy.html" class="inline-block mt-6 text-zinc-600 hover:text-[#7b0323] text-xs transition-colors italic underline">Refund Policy</a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-zinc-600 text-[11px] uppercase tracking-widest">
+                    &copy; 2026 Creativ Plus. Built for India's AI Revolution.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800, offset: 50 });
+    </script>
+
+    <script>
+        // ==========================================
+        // Premium Mobile Menu Logic
+        // ==========================================
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuBackdrop = document.getElementById('menu-backdrop');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+            menuBackdrop.classList.toggle('open');
+            
+            if (mobileMenu.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        menuBackdrop.addEventListener('click', toggleMenu);
+
+        // ==========================================
+        // Contact Form Logic
+        // ==========================================
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const successBox = document.getElementById("formSuccess");
+            const submitBtn = document.getElementById("submitBtn");
+
+            successBox.classList.add("hidden");
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Submitting...";
+
+            const data = {
+                name: document.getElementById("userName").value,
+                email: document.getElementById("userEmail").value,
+                phone: document.getElementById("userPhone").value,
+                company: document.getElementById("companyName").value,
+                service: document.getElementById("serviceType").value,
+                message: document.getElementById("userMessage").value,
+                page: window.location.href
+            };
+
+            fetch("https://script.google.com/macros/s/AKfycbxH2Ntc4T_x1wCd57oBA5M9yA8iWsKwpQm_IfnS1Kwi1ILghEI2PnP7qUktddKGv2kq/exec", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: { "Content-Type": "text/plain;charset=utf-8" }
+            })
+            .then(res => res.json())
+            .then(() => {
+                successBox.classList.remove("hidden");
+                form.reset();
+            })
+            .catch(() => alert("Error. Please try WhatsApp."))
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Request a strategy session";
+            });
+        });
+    </script>
+</body>
+
+</html>

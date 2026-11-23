@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='227 267 154 154'%3E%3Cdefs%3E%3ClinearGradient id='wineGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E61C53'/%3E%3Cstop offset='100%25' stop-color='%237B0323'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='url(%23wineGrad)'%3E%3Cpath d='M329.24,358.88l-22.57,22.61c-7.85,7.86-20.58,7.86-28.44,0.02l-23.01-22.98c-7.86-7.85-7.87-20.58-0.02-28.44l22.98-23.01c7.85-7.86,20.58-7.87,28.44-0.02l22.5,22.47c5.16,5.16,13.53,5.15,18.69-0.01s5.15-13.53-0.01-18.69l-20.6-20.57c-6.42-6.41-16.81-6.4-23.21,0.01c-6.41,6.42-16.79,6.43-23.21,0.02c-3.21-3.2-7.4-4.8-11.6-4.8c-4.2,0-8.39,1.61-11.6,4.82l-19.18,19.21c-6.41,6.42-6.4,16.81,0.01,23.21c3.21,3.2,4.81,7.4,4.82,11.6c0,4.2-1.6,8.4-4.8,11.6c-3.2,3.2-4.8,7.41-4.79,11.61c0,4.2,1.61,8.39,4.82,11.6l19.21,19.18c6.42,6.41,16.8,6.39,23.2-0.02c3.2-3.21,7.4-4.81,11.61-4.81c4.2,0,8.4,1.6,11.6,4.8c3.2,3.2,7.41,4.8,11.6,4.8c4.21-0.01,8.4-1.62,11.61-4.83l20.68-20.7c5.16-5.16,5.15-13.53-0.01-18.69C342.77,353.71,334.4,353.72,329.24,358.88z'/%3E%3Cpath d='M375.84,342.88c-5.61-3.07-10.22-7.68-13.29-13.29l-1.4-2.57l-1.4,2.57c-3.07,5.61-7.68,10.22-13.29,13.29l-2.57,1.4l2.57,1.4c5.61,3.07,10.22,7.68,13.29,13.29l1.4,2.57l1.4-2.57c3.07-5.61,7.68-10.22,13.29-13.29l2.57-1.4L375.84,342.88z'/%3E%3Cpath d='M294.1,329.59l-1.4-2.57l-1.4,2.57c-3.07,5.61-7.68,10.22-13.29,13.29l-2.57,1.4l2.57,1.4c5.61,3.07,10.22,7.68,13.29,13.29l1.4,2.57l1.4-2.57c3.07-5.61,7.68-10.22,13.29-13.29l2.57-1.4l-2.57-1.4C301.78,339.81,297.17,335.2,294.1,329.59z'/%3E%3C/g%3E%3C/svg%3E">
+
+    <title>Proposal | Kish Hospitality Consultant | Arpit AI</title>
+    <style>
+        :root {
+            --brand-wine: #42001D;
+            --vibrant-wine: #731235;
+            --accent-pink: #FF2A6D;
+            --pure-white: #ffffff;
+            --soft-white: #f8f9fa;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --header-gradient: linear-gradient(135deg, #510625 0%, #42001D 100%);
+        }
+
+        /* Critical Reset for Professional PDF Conversion */
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e2;
+            color: var(--text-main);
+            font-family: 'Georgia', serif;
+        }
+
+        /* Locked Letter Size Dimensions (8.5in x 11in) */
+        .page {
+            width: 8.5in;
+            height: 11in;
+            margin: 20px auto;
+            background: var(--pure-white);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            page-break-after: always;
+        }
+
+        /* --- SMARTER STYLES FOR EDITING & DOWNLOADING --- */
+        [contenteditable="true"] {
+            outline: none;
+            transition: background-color 0.2s ease;
+            border-radius: 3px;
+        }
+        
+        [contenteditable="true"]:hover, [contenteditable="true"]:focus {
+            background-color: #fff0f5;
+            cursor: text;
+        }
+
+        span[contenteditable="true"] {
+            border-bottom: 1px dashed #b3b3b3;
+            min-width: 15px;
+            display: inline-block;
+        }
+        
+        span[contenteditable="true"]:hover, span[contenteditable="true"]:focus {
+            border-bottom: 1px solid var(--accent-pink);
+        }
+
+        td span[contenteditable="true"] {
+            border-bottom: 1px dashed transparent;
+        }
+        
+        #download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-pink);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 42, 109, 0.4);
+            z-index: 1000;
+            transition: transform 0.2s;
+        }
+        
+        #download-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            body { background: none; }
+            .page { 
+                margin: 0; 
+                box-shadow: none; 
+                width: 8.5in; 
+                height: 11in; 
+            }
+            @page { size: letter; margin: 0; }
+            
+            #download-btn { display: none !important; }
+            [contenteditable="true"] { background-color: transparent !important; }
+            span[contenteditable="true"] { 
+                border-bottom: none !important; 
+            }
+        }
+
+        /* HEADER SECTION */
+        header {
+            background: var(--header-gradient);
+            padding: 25px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 5px solid var(--vibrant-wine);
+            height: 110px;
+        }
+
+        .brand-logo { height: 50px; width: auto; }
+
+        .header-meta {
+            text-align: right;
+            color: var(--soft-white);
+            font-family: 'Arial', sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header-status {
+            text-align: right;
+            color: var(--soft-white);
+            font-family: 'Arial', sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        /* GRID LAYOUT */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            flex-grow: 1;
+        }
+
+        /* SIDEBAR */
+        aside {
+            background-color: var(--soft-white);
+            padding: 35px 30px;
+            border-right: 1px solid #eee;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            display: block;
+            color: var(--vibrant-wine);
+            font-weight: 800;
+            font-size: 9px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1.2px;
+        }
+
+        .info-group { margin-bottom: 25px; line-height: 1.4; font-size: 12px; }
+
+        /* MAIN BODY */
+        main {
+            padding: 40px 45px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+        }
+
+        h2 { 
+            font-family: 'Georgia', serif; 
+            color: var(--brand-wine); 
+            font-size: 22px; 
+            margin: 0 0 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 5px;
+        }
+
+        .highlight-box {
+            background: #fffcfd;
+            border-left: 4px solid var(--brand-wine);
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        /* --- OPTIMIZED TABLE STYLES --- */
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+            font-size: 11px; 
+            table-layout: fixed; 
+        }
+        
+        th { 
+            background: var(--brand-wine); 
+            color: white; 
+            text-align: left; 
+            padding: 12px 10px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+        }
+        
+        td { 
+            padding: 12px 10px; 
+            border-bottom: 1px solid #eee; 
+            vertical-align: middle; 
+        }
+        
+        /* Adjusted widths to keep COMPLIMENTARY inside the bounds */
+        th:nth-child(1) { width: 38%; }
+        th:nth-child(2) { width: 26%; }
+        th:nth-child(3) { width: 36%; text-align: right; } 
+        
+        td:nth-child(3) { text-align: right; } 
+
+        .total-row { 
+            background-color: #fdf2f5; 
+            font-weight: bold; 
+            color: var(--brand-wine); 
+            font-size: 14px; 
+            border-top: 2px solid var(--brand-wine); 
+        }
+        
+        .total-row td { padding: 16px 10px; } 
+
+        .strike { text-decoration: line-through; color: #999; font-size: 11px; margin-right: 5px; }
+        .free { color: #27ae60; font-weight: 800; font-size: 10px; white-space: nowrap; } 
+
+        /* TIMELINE */
+        .timeline { margin-top: 20px; border-left: 2px solid var(--brand-wine); padding-left: 20px; }
+        .timeline-step { margin-bottom: 25px; position: relative; }
+        .timeline-step::before {
+            content: ""; position: absolute; left: -27px; top: 0;
+            width: 12px; height: 12px; background: var(--brand-wine); border-radius: 50%;
+            border: 2px solid white;
+        }
+        .time-tag { font-weight: bold; color: var(--vibrant-wine); font-size: 10px; display: block; margin-bottom: 3px; }
+
+        /* FOOTER */
+        footer {
+            background: var(--brand-wine);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<button id="download-btn" onclick="window.print()">Download PDF</button>
+
+<div class="page">
+    <header>
+        <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="220 280 660 130">
+          <defs>
+            <linearGradient id="logoWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#FFFFFF"/><stop offset="100%" style="stop-color:#fce4ec"/>
+            </linearGradient>
+          </defs>
+          <g fill="url(#logoWhite)">
+            <path d="M329.24,358.88l-22.57,22.61c-7.85,7.86-20.58,7.86-28.44,0.02l-23.01-22.98c-7.86-7.85-7.87-20.58-0.02-28.44l22.98-23.01c7.85-7.86,20.58-7.87,28.44-0.02l22.5,22.47c5.16,5.16,13.53,5.15,18.69-0.01s5.15-13.53-0.01-18.69l-20.6-20.57c-6.42-6.41-16.81-6.4-23.21,0.01c-6.41,6.42-16.79,6.43-23.21,0.02c-3.21-3.2-7.4-4.8-11.6-4.8c-4.2,0-8.39,1.61-11.6,4.82l-19.18,19.21c-6.41,6.42-6.4,16.81,0.01,23.21c3.21,3.2,4.81,7.4,4.82,11.6c0,4.2-1.6,8.4-4.8,11.6c-3.2,3.2-4.8,7.41-4.79,11.61c0,4.2,1.61,8.39,4.82,11.6l19.21,19.18c6.42,6.41,16.8,6.39,23.2-0.02c3.2-3.21,7.4-4.81,11.61-4.81c4.2,0,8.4,1.6,11.6,4.8c3.2,3.2,7.41,4.8,11.6,4.8c4.21-0.01,8.4-1.62,11.61-4.83l20.68-20.7c5.16-5.16,5.15-13.53-0.01-18.69C342.77,353.71,334.4,353.72,329.24,358.88z"/><path d="M375.84,342.88c-5.61-3.07-10.22-7.68-13.29-13.29l-1.4-2.57l-1.4,2.57c-3.07,5.61-7.68,10.22-13.29,13.29l-2.57,1.4l2.57,1.4c5.61,3.07,10.22,7.68,13.29,13.29l1.4,2.57l1.4-2.57c3.07-5.61,7.68-10.22,13.29-13.29l2.57-1.4L375.84,342.88z"/><path d="M294.1,329.59l-1.4-2.57l-1.4,2.57c-3.07,5.61-7.68,10.22-13.29,13.29l-2.57,1.4l2.57,1.4c5.61,3.07,10.22,7.68,13.29,13.29l1.4,2.57l1.4-2.57c3.07-5.61,7.68-10.22,13.29-13.29l2.57-1.4l-2.57-1.4C301.78,339.81,297.17,335.2,294.1,329.59z"/>
+          </g>
+          <g transform="translate(315, -112)">
+            <g fill="#FFFFFF">
+              <path d="M123.77,485.36c-2.21,2.49-4.86,4.44-7.96,5.83c-3.1,1.39-6.37,2.09-9.79,2.09c-6.67,0-12.38-2.12-17.14-6.35c-5.05-4.52-7.57-10.29-7.57-17.31c0-6.79,2.32-12.63,6.96-17.53c4.64-4.9,10.5-7.35,17.57-7.35c4.12,0,8.18,1.19,12.18,3.57c1.33,0.75,2.93,1.97,4.79,3.65l-6.7,6.44c-1.22-1.28-2.81-2.33-4.79-3.18c-1.97-0.84-4.03-1.26-6.18-1.26c-4.06,0-7.45,1.51-10.18,4.52c-2.73,3.02-4.09,6.61-4.09,10.79c0,4.29,1.45,7.83,4.35,10.62c2.9,2.78,6.38,4.18,10.44,4.18c1.97,0,4.03-0.52,6.18-1.57c2.15-1.04,3.86-2.2,5.13-3.48L123.77,485.36z"/><path d="M155.44,444.64l-1.39,9.4c-4.7,0.7-8.24,2.55-10.61,5.57c-2.61,3.31-3.92,8.18-3.92,14.62v18.18h-9.48v-46.98h9.48v7.4c1.98-2.61,4.4-4.62,7.26-6.05C149.64,445.35,152.52,444.64,155.44,444.64z"/><path d="M205.64,472.92h-32.63v-8h22.97c-0.75-3.02-2.49-5.57-5.22-7.66c-2.73-2.09-5.69-3.13-8.87-3.13c-4.23,0-7.79,1.44-10.66,4.31c-2.87,2.87-4.31,6.48-4.31,10.83c0,4.29,1.45,7.86,4.35,10.7c2.9,2.84,6.44,4.26,10.61,4.26c1.39,0,3.6-0.75,6.61-2.26c0.99-0.46,2.38-1.25,4.18-2.35l6.87,5.92c-2.03,2.38-4.63,4.26-7.79,5.66c-3.16,1.39-6.51,2.09-10.05,2.09c-6.67,0-12.3-2.03-16.88-6.09c-4.99-4.41-7.48-10.27-7.48-17.58c0-6.61,2.44-12.35,7.31-17.23c4.87-4.87,10.56-7.31,17.05-7.31c6.55,0,12.27,2.55,17.14,7.66c4.7,4.93,7.05,10.59,7.05,16.97C205.9,470.8,205.82,471.87,205.64,472.92z"/><path d="M258.71,492.41h-9.57v-3.65c0-2.03,0.49-3.92,1.48-5.66c-1.62,2.26-3.04,3.95-4.26,5.05c-3.83,3.42-8.12,5.13-12.88,5.13c-6.15,0-11.63-2.46-16.44-7.4c-4.81-4.93-7.22-10.58-7.22-16.97c0-6.21,2.39-11.73,7.18-16.57c4.79-4.84,10.16-7.26,16.14-7.26c4.81,0,9.19,1.71,13.14,5.13c1.27,1.1,2.75,2.84,4.44,5.22c-0.87-1.74-1.3-3.68-1.3-5.83v-4.18h9.31V492.41z M249.14,468.74c0-3.83-1.57-7.28-4.70-10.35c-3.13-3.07-6.61-4.61-10.44-4.61c-3.83,0-7.19,1.51-10.09,4.52c-2.9,3.02-4.35,6.53-4.35,10.53c0,4.23,1.39,7.89,4.18,10.96c2.78,3.08,6.09,4.61,9.92,4.61s7.31-1.45,10.44-4.35C247.46,476.98,249.14,473.21,249.14,468.74z"/><path d="M292.3,453.6h-12.79v38.8h-9.57v-38.8h-6.53v-8.18h6.53v-15.66h9.57v15.66h12.79V453.6z"/><path d="M307.78,439.94h-9.57v-10.18h9.57V439.94z M307.78,492.41h-9.57v-46.98h9.57V492.41z"/><path d="M361.89,445.42l-24.52,50.18l-24.54-50.18l10.46-0.01l14.08,30.18l14.08-30.18L361.89,445.42z"/>
+            </g>
+            <g fill="#FF8BA7">
+              <path d="M425.41,467.74c0,6.51-2.32,12.29-6.96,17.35c-4.64,5.06-10.15,7.58-16.53,7.58c-3.42,0-6.5-0.69-9.22-2.06c-2.73-1.38-4.99-3.41-6.79-6.1l-1.39-2.11c0.87,1.86,1.31,3.81,1.31,5.85v19.9h-9.48v-62.73h9.48v3.65c0,0.93-0.09,1.8-0.27,2.61c-0.18,0.81-0.5,1.83-0.95,3.04c0.75-1.39,1.45-2.46,2.09-3.22c3.94-4.76,8.96-7.13,15.05-7.13c6.21,0,11.7,2.34,16.49,7.02S425.41,461.52,425.41,467.74z M415.67,467.56c0-3.78-1.38-7.08-4.13-9.9c-2.76-2.82-6.02-4.23-9.79-4.23c-3.89,0-7.34,1.34-10.35,4.01c-3.36,2.97-5.05,6.72-5.05,11.26c0,4.25,1.45,7.76,4.35,10.56c2.9,2.79,6.41,4.19,10.53,4.19c4,0,7.41-1.61,10.22-4.84S415.67,471.69,415.67,467.56z"/><path d="M441.6,492.41h-9.75v-62.64h9.75V492.41z"/><path d="M493.1,492.41h-9.48v-2.31c0-2.01,0.43-3.97,1.3-5.87c-1.16,2.54-3.09,4.66-5.79,6.35s-5.79,2.53-9.27,2.53c-5.57,0-10.24-1.97-14.01-5.92c-4-4.18-6-9.71-6-16.62v-25.14h9.31v23.84c0,4.52,1.1,8.15,3.31,10.88c2.2,2.73,5.02,4.09,8.44,4.09c3.83,0,6.73-0.87,8.7-2.61c2.67-2.38,4-6.47,4-12.27v-23.93h9.48V492.41z"/><path d="M530.69,477.27c0,5.1-1.65,9.11-4.96,12.01c-3.02,2.67-6.82,4-11.4,4c-4.87,0-8.85-1.38-11.92-4.13c-3.08-2.75-4.61-6.48-4.61-11.18h9.22c0,1.91,0.68,3.58,2.04,5c1.36,1.42,3.18,2.13,5.44,2.13c1.86,0,3.42-0.49,4.7-1.48c1.28-0.99,1.91-2.26,1.91-3.83c0.35-2.9-1.33-5.05-5.05-6.44l-3.83-1.31c-5.39-1.86-9.06-3.81-11.01-5.87c-1.94-2.06-2.92-4.74-2.92-8.05c0-3.77,1.64-7.09,4.92-9.96c3.28-2.87,6.86-4.31,10.75-4.31c5.28,0,9.25,1.68,11.92,5.05c1.91,2.44,3.05,5.54,3.39,9.31h-9.74v-0.44c-0.41-1.16-0.75-2-1.04-2.52c-1.04-1.68-2.38-2.52-4-2.52c-1.97,0-3.48,0.49-4.52,1.48c-1.04,0.99-1.57,2.12-1.57,3.39c0.12,1.04,0.51,1.96,1.17,2.74c0.67,0.78,1.84,1.41,3.52,1.87l6.96,2.52C527.15,467.29,530.69,471.47,530.69,477.27z"/>
+            </g>
+          </g>
+        </svg>
+
+        <div class="header-status">
+            India's #1 AI Workforce<br><span contenteditable="true">March 14, 2026</span>
+        </div>
+    </header>
+
+    <div class="content-grid">
+        <aside>
+            <div class="info-group">
+                <span class="label">Representative</span>
+                <strong contenteditable="true">Parth Nagpal</strong><br>
+                <span contenteditable="true">Business Manager, Creativ Plus</span><br>
+                <span contenteditable="true">+91 95998 91756</span>
+            </div>
+
+            <div class="info-group" style="border-top: 1px solid #eee; padding-top: 20px;">
+                <span class="label">Company Info</span>
+                www.creativplus.in<br>
+                contact@creativplus.in<br>
+                +91 76349 14900
+            </div>
+
+            <div class="info-group" style="border-top: 1px solid #eee; padding-top: 20px;">
+                <span class="label">Prepared For</span>
+                <strong contenteditable="true">Client Name</strong><br>
+                <span contenteditable="true">Business name</span><br>
+                <span contenteditable="true">city</span>
+            </div>
+
+            <div class="info-group">
+                <span class="label">Client Detail</span>
+                <span contenteditable="true">+91 0123 456 789</span><br>
+                <span contenteditable="true">clientmail@gmail.com</span>
+            </div>
+        </aside>
+
+        <main>
+            <h2>Arpit Ai | Neural Voice Agent</h2>
+            <p>Dear <span contenteditable="true">Clent name</span>,</p>
+            <p contenteditable="true">As India’s first dedicated Hospitality HR Consultant, your global operations require extreme speed and scalability. We propose the integration of Arpit AI to automate your global talent acquisition and screening processes.</p>
+
+            <div class="highlight-box" contenteditable="true">
+                "Arpit will manage up to 9,000 minutes of global screening and candidate matching, ensuring no inquiry or application is left unanswered, 24/7."
+            </div>
+
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Details</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span contenteditable="true">Arpit AI Neural Minutes</span></td>
+                        <td><span contenteditable="true">9,000 Mins @ ₹6</span></td>
+                        <td><span contenteditable="true" class="price-input">₹54,000</span></td>
+                    </tr>
+                    <tr>
+                        <td><span contenteditable="true">Mobile Virtual Number</span></td>
+                        <td><span contenteditable="true">Monthly Subscription</span></td>
+                        <td><span contenteditable="true" class="price-input">₹499</span></td>
+                    </tr>
+                    <tr>
+                        <td><span contenteditable="true">Setup & Integration Fee</span></td>
+                        <td><span contenteditable="true">Full implementation</span></td>
+                        <td><span contenteditable="true" class="price-input"><span class="strike">₹19,999</span> <span class="free">COMPLIMENTARY</span></span></td>
+                    </tr>
+                    <tr>
+                        <td><span contenteditable="true">MMC (Monthly Maintenance)</span></td>
+                        <td><span contenteditable="true">Ongoing optimization</span></td>
+                        <td><span contenteditable="true" class="price-input"><span class="strike">₹9,999</span> <span class="free">COMPLIMENTARY</span></span></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2" style="text-align: left;">Initial Investment:</td>
+                        <td><span contenteditable="true" id="grand-total">₹54,499*</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 25px; font-size: 11px; font-style: italic; color: var(--text-muted);" contenteditable="true">
+                *Specialized rate structure applied for your Business.
+            </p>
+        </main>
+    </div>
+    <footer>Building India's #1 Ai Workforce at www.Creativplus.in</footer>
+</div>
+
+<div class="page">
+    <header>
+        <div style="color:white; font-family:Arial; font-weight:bold; letter-spacing:3px;">
+            ARPIT AI | NEURAL VOICE AGENT
+        </div>
+        <div class="header-status">Operational Framework</div>
+    </header>
+
+    <div class="content-grid">
+        <aside>
+            <div class="info-group">
+                <span class="label">Creativ plus - CXO</span>
+                <strong>Kishan Singh</strong><br>
+                Founder & CAIO, Creativ Plus<br>
+                +91 76349 14900
+            </div>
+
+            <div class="info-group" style="border-top: 1px solid #eee; padding-top: 20px;">
+                <span class="label">Company Info</span>
+                www.creativplus.in<br>
+                contact@creativplus.in<br>
+                +91 76349 14900
+            </div>
+            
+            <div class="info-group" style="border-top: 1px solid #eee; padding-top: 20px;">
+                <span class="label">Core Deliverables</span>
+                Agentic Reasoning Engine<br>
+                Human-Like Logic<br>
+                CRM & Live Dashboard<br>
+                Automated Follow-ups
+            </div>
+        </aside>
+
+        <main>
+            <h2>How Arpit AI Works</h2>
+            <p>Arpit is an autonomous Neural Voice Agent that functions as a senior member of your sales team. Unlike standard bots, Arpit uses an Agentic Reasoning Engine to think, qualify, and handle complex objections with human-like logic.</p>
+
+            <div class="highlight-box">
+                "Arpit executes a Neural Handshake Protocol to establish immediate trust, handling the top-of-funnel screening so your team only speaks to qualified talent."
+            </div>
+
+            <h3 class="label" style="font-size: 12px;">Smooth Onboarding Process</h3>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <span class="time-tag">PHASE 1: INITIATION</span>
+                    <strong>Deal Closure & Onboarding</strong>
+                    <p style="font-size: 11px; margin-top: 4px;">Secure payment is confirmed, followed by the submission of the digital onboarding form. If required, an onboarding meeting is scheduled with the technical team.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <span class="time-tag">PHASE 2: ACTIVATION</span>
+                    <strong>Arpit AI Core Activation</strong>
+                    <p style="font-size: 11px; margin-top: 4px;">The core neural engine is activated and integrated with your lead sources, CRM webhooks, and the Mobile Virtual Number.</p>
+                </div>
+
+                <div class="timeline-step">
+                    <span class="time-tag">PHASE 3: OPTIMIZATION (NEXT 7 DAYS)</span>
+                    <strong>Agent Training & Modification</strong>
+                    <p style="font-size: 11px; margin-top: 4px;">Over the next 7 days, we fine-tune and modify the agent to mirror your business logic perfectly. Arpit is trained on your specific objections and success criteria to ensure 100% matching precision.</p>
+                </div>
+            </div>
+
+            <div style="background: #fdfdfd; padding: 20px; border: 1px dashed #ccc; margin-top: 15px;">
+                <h4 style="margin-top:0; color:var(--brand-wine); font-size: 14px;">To Initiate Onboarding:</h4>
+                <ul style="font-size: 12px; color: #444; margin: 5px 0 0 15px;">
+                    <li>Applicant record access (Excel/CRM).</li>
+                    <li>Core Lead Qualification 'Success Criteria' for Your Business.</li>
+                    <li>Final Creativ Plus Arpit Ai live with neural voice profile.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+    <footer>www.creativplus.in</footer>
+</div>
+
+<script>
+    function calculateTotal() {
+        let total = 0;
+        const priceInputs = document.querySelectorAll('.price-input');
+        
+        priceInputs.forEach(input => {
+            let text = input.innerText.toUpperCase();
+            
+            // Ignore if the text says complimentary or free
+            if (text.includes('COMPLIMENTARY') || text.includes('FREE')) {
+                return; 
+            }
+            
+            // Extract the numbers only, ignoring symbols like ₹ and commas
+            let numericString = text.replace(/[^0-9.]/g, '');
+            let value = parseFloat(numericString);
+            
+            // Add to total if it's a valid number
+            if (!isNaN(value)) {
+                total += value;
+            }
+        });
+
+        // Format back into standard Indian Rupee format
+        let formattedTotal = new Intl.NumberFormat('en-IN').format(total);
+        
+        // Update the final total line and re-append the asterisk
+        document.getElementById('grand-total').innerText = '₹' + formattedTotal + '*';
+    }
+
+    // Trigger the calculation any time the team types in the table
+    document.querySelector('.price-table').addEventListener('input', calculateTotal);
+</script>
+
+</body>
+</html>
